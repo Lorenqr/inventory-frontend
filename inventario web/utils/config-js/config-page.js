@@ -24,10 +24,19 @@ function loadPage(page) {
     .then(res => res.text())
     .then(html => {
       document.getElementById("content-placeholder").innerHTML = html;
+      const scriptPath = `pages/${page}.js`;
+      const script = document.createElement("script");
+      script.src = scriptPath;
+      script.defer = true;
+      script.onload = () => console.log(`Script ${scriptPath} cargado.`);
+      script.onerror = () => console.warn(`No se encontró script para ${page}`);
+      document.body.appendChild(script);
     })
     .catch(err => {
       document.getElementById("content-placeholder").innerHTML = "<p>Error al cargar la página.</p>";
     });
+
+    
 }
 
 loadPage("home");

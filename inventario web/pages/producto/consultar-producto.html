@@ -1,0 +1,99 @@
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Productos</h1>
+</div>
+
+<!-- DataTales Example -->
+<div class="card shadow mb-6">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Listado de Productos</h6>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Nombre</th>
+            <th>tipo</th>
+            <th>stock</th>
+            <th>Imagen</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody id="productos-body">
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!--modal de eliminar-->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title" id="confirmDeleteLabel">Confirmar Eliminación</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ¿Estás seguro de que deseas eliminar este Producto?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de edición -->
+<div class="modal fade" id="editProductoModal" tabindex="-1" aria-labelledby="editPorductoModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="editProductoForm">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editProductoModalLabel">Editar Producto</h5>
+
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="edit-id">
+          <div class="mb-3">
+            <label for="edit-name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="edit-name" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit-status" class="form-label">Tipo</label>
+            <input type="text" class="form-control" id="edit-status" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit-description" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" id="edit-description" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit-stock" class="form-label">Existencia</label>
+            <input type="text" class="form-control" id="edit-stock" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Imagen actual</label><br>
+            <img id="edit-picture-preview" src="" alt="Imagen del producto" width="100" height="100"
+              style="object-fit: cover; border-radius: 8px;" />
+          </div>
+          <div class="mb-3">
+            <label for="edit-picture" class="form-label">Cambiar imagen</label>
+            <input type="file" class="form-control" id="edit-picture" accept="image/*">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -40,3 +40,28 @@ function loadPage(page) {
 }
 
 loadPage("home");
+
+//cargue en el panel de control
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("http://localhost:8080/api/v1/empleados/contar")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Error al obtener los datos");
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        document.getElementById("empleados").textContent = data.empleados;
+        document.getElementById("productos").textContent = data.productos;
+        document.getElementById("entregas").textContent = data.entregas;
+        document.getElementById("devoluciones").textContent = data.devoluciones;
+      })
+      .catch(error => {
+        console.error("Error al cargar los datos del panel:", error);
+        document.getElementById("empleados").textContent = "-";
+        document.getElementById("productos").textContent = "-";
+        document.getElementById("entregas").textContent = "-";
+        document.getElementById("devoluciones").textContent = "-";
+      });
+  });

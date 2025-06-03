@@ -1,33 +1,25 @@
 <div class="container mt-4">
-    <h2>Crear Empleado</h2>
-    <form id="crear-empleado-form">
-        <div class="form-group">
-            <label for="identificationNumber">Cédula</label>
-            <input type="text" class="form-control" id="identificationNumber" required />
-        </div>
+    <h2>Crear Producto</h2>
+    <form id="crear-producto-form">
         <div class="form-group">
             <label for="name">Nombre</label>
             <input type="text" class="form-control" id="name" required />
         </div>
         <div class="form-group">
-            <label for="address">Dirección</label>
-            <input type="text" class="form-control" id="address" required />
+            <label for="description">Descripcion</label>
+            <input type="text" class="form-control" id="description" required />
         </div>
         <div class="form-group">
-            <label for="phone">Teléfono</label>
-            <input type="text" class="form-control" id="phone" required />
+            <label for="status">Tipo</label>
+            <input type="text" class="form-control" id="status" required />
         </div>
         <div class="form-group">
-            <label for="email">Correo</label>
-            <input type="text" class="form-control" id="email" />
+            <label for="stock">Cantidad</label>
+            <input type="text" class="form-control" id="stock" />
         </div>
         <div class="form-group">
-            <label for="selectOpciones" class="form-label">Estado:</label>
-            <select class="form-select" aria-label="Default select example" id="active">
-                <option selected>Seleccione</option>
-                <option value="false">Inactivo</option>
-                <option value="true">Activo</option>
-            </select>
+            <label for="picture">Archivo</label>
+            <input type="file" id="picture" />
         </div>
         <button type="submit" class="btn btn-primary mt-3">Crear</button>
     </form>
@@ -44,7 +36,7 @@
         </button>
       </div>
       <div class="modal-body">
-        Empleado creado con éxito 🎉
+        Producto creado con éxito 🎉
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
